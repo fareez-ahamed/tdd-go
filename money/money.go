@@ -1,9 +1,9 @@
 package money
 
 type Dollar struct {
-	value int
+	Value int
 }
 
-func (d *Dollar) Times(n int) {
-	d.value *= n
+func (d *Dollar) Times(n int) *Dollar {
+	return &Dollar{d.Value * n}
 }
