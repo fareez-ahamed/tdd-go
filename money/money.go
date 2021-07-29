@@ -1,13 +1,17 @@
 package money
 
 type Dollar struct {
-	Value int
+	value int
 }
 
-func (d *Dollar) Times(n int) *Dollar {
-	return &Dollar{d.Value * n}
+func (d *Dollar) Times(n int) Dollar {
+	return Dollar{d.value * n}
 }
 
 func (d *Dollar) Equals(a *Dollar) bool {
-	return d.Value == a.Value
+	return d.value == a.value
+}
+
+func NewDollar(n int) Dollar {
+	return Dollar{n}
 }
